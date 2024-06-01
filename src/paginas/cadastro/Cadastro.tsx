@@ -3,6 +3,7 @@ import Usuario from "../../models/Usuario"
 import { cadastrarUsuario } from "../../services/service";
 import { useNavigate } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Cadastro(){
 
@@ -52,13 +53,13 @@ async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
         try{
 
             await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-            alert('Usuario cadastrado com sucesso!');
+            ToastAlerta('Usuario cadastrado com sucesso!', 'sucesso');
 
         }catch(error){
-            alert('Erro ao cadastrar usuario!')
+            ToastAlerta('Erro ao cadastrar usuario!', 'erro')
         }
     } else {
-        alert("Dados estão inconsistentes! Verifique os dados do usuário.");
+        ToastAlerta("Dados estão inconsistentes! Verifique os dados do usuário.", 'info');
         setUsuario({ ...usuario, senha: '' });
         setConfirmaSenha('');
       }

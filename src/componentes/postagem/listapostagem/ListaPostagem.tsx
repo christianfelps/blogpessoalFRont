@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { buscar } from '../../../services/service';
 import { Dna } from 'react-loader-spinner';
 import CardPostagens from '../cardPostagem/CardPostagens';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 function ListaPostagem() {
 
@@ -18,7 +19,7 @@ function ListaPostagem() {
 
     useEffect(() => {
         if (token === '') {
-          alert('Você precisa estar logado');
+          ToastAlerta('Você precisa estar logado', 'erro');
           navigate('/login');
         }
       }, [token]);

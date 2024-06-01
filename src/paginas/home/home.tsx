@@ -1,4 +1,4 @@
-import ModalPostagem from "../../componentes/modalpostagem/ModalPostagem"
+import ModalPostagem from "../../componentes/postagem/modalpostagem/ModalPostagem"
 import ListaPostagem from "../../componentes/postagem/listapostagem/ListaPostagem"
 
 function Home() {
