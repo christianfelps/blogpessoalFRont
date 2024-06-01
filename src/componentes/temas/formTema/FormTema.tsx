@@ -5,7 +5,6 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar, atualizar, cadastrar } from "../../../services/service";
 import { RotatingLines } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
-
 function FormTema() {
 
   const navigate = useNavigate()
@@ -21,7 +20,7 @@ function FormTema() {
   async function buscaPorId(id: string) {
     try {
       await buscar(`/temas/${id}`, setTema, {
-        Headers: { Authorization: token }
+        headers: { Authorization: token }
       })
     } catch (error: any) {
       if (error.toString().includes('401')) {
@@ -62,7 +61,7 @@ function FormTema() {
 
       try {
         await atualizar(`/temas`, tema, setTema, {
-          Headers: { 'Authorization': token }
+          headers: { 'Authorization': token }
         });
         ToastAlerta('Tema atualizado com sucesso!', 'sucesso');
       } catch (error: any) {
@@ -78,12 +77,12 @@ function FormTema() {
 
       try {
         await cadastrar(`/temas`, tema, setTema, {
-          Headers: { 'Authorization': token }
+          headers: { 'Authorization': token }
         });
         ToastAlerta('Tema cadastrado com sucesso!', 'sucesso');
       } catch (error: any) {
         if (error.toString().includes('401')) {
-          ToastAlerta('O token Expirou!', 'info')
+          alert('O token Expirou!')
           handleLogout()
         } else {
           ToastAlerta('Erro ao cadastrar o Tema!', 'erro')

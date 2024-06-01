@@ -5,6 +5,7 @@ import Postagem from "../../../models/Postagem"
 import { RotatingLines } from "react-loader-spinner"
 import { buscar, deletar } from "../../../services/service"
 import { ToastAlerta } from "../../../utils/ToastAlerta"
+
 function DeletarPostagem() {
 
     const navigate = useNavigate()
@@ -24,12 +25,10 @@ function DeletarPostagem() {
                     Authorization: token
                 }
             })
-            ToastAlerta('Postagem apagada com sucesso', 'sucesso')
 
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
-                ToastAlerta('O token expirou voce precisa estar logado', 'info')
             }
         }
     }
@@ -57,13 +56,13 @@ function DeletarPostagem() {
                 }
             })
 
-            ToastAlerta('Postagem apagada com sucesso', 'erro')
+            ToastAlerta('Postagem apagada com sucesso', 'sucesso')
 
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
             }else {
-                ToastAlerta('Erro ao deletar a postagem.', 'erro')
+                
             }
         }
 

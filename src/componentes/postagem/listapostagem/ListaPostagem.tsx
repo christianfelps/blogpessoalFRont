@@ -6,7 +6,6 @@ import { buscar } from '../../../services/service';
 import { Dna } from 'react-loader-spinner';
 import CardPostagens from '../cardPostagem/CardPostagens';
 import { ToastAlerta } from '../../../utils/ToastAlerta';
-
 function ListaPostagem() {
 
     const [postagens, setPostagens] = useState<Postagem []> ([]);

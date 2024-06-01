@@ -6,7 +6,6 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { Dna } from "react-loader-spinner";
 import { buscar } from "../../../services/service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
-
 function ListaTemas() {
 
   

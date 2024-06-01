@@ -8,7 +8,6 @@ import { RotatingLines } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 
-
 function FormPostagem() {
     const navigate = useNavigate()
 
