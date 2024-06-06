@@ -70,7 +70,7 @@ async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     <>
     <div className="flex flex-row">
         <div className="border-black w-full ">
-            <img className="w-full" src="https://ik.imagekit.io/oar6yj13k/pessoasblog.jpg?updatedAt=1716210003534" alt="" />
+            <img className="w-full" src="https://img.freepik.com/free-vector/laptop-blogging_23-2148000410.jpg?t=st=1717268723~exp=1717272323~hmac=2ebf05adcebd7fb43667d5caf774d19c0454770936e8825c7b3da1e4dee0d3c8&w=740" alt="" />
         </div>
         <form  className="p-8 rounded-lg shadow-lg max-w-lg w-full" 
         onSubmit={cadastrarNovoUsuario}>
@@ -88,16 +88,16 @@ async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
         </div>
 
         <div className="col-span-1">
-            <label  className="block text-sm font-medium text-black">Senha</label>
-            <input type="password" id="senha" name="senha" placeholder="Senha" className="mt-1 block w-full p-2 border border-gray-300 "value={usuario.senha}
-                onChange={(e: ChangeEvent<HTMLInputElement>)=> atualizarEstado(e)} />
-        </div>
-        <div className="col-span-1">
             <label  className="block text-sm font-medium text-black">Foto</label>
             <input type="text" id="foto" name="foto" placeholder="link da sua foto" className="mt-1 block w-full p-2 border border-gray-300 " value={usuario.foto} 
                 onChange={(e: ChangeEvent<HTMLInputElement>)=> atualizarEstado(e)}/>
         </div>
 
+        <div className="col-span-1">
+            <label  className="block text-sm font-medium text-black">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Senha" className="mt-1 block w-full p-2 border border-gray-300 "value={usuario.senha}
+                onChange={(e: ChangeEvent<HTMLInputElement>)=> atualizarEstado(e)} />
+        </div>
         
             <label  className="block text-sm font-medium text-black">Confirmar senha</label>
             <input type="password" id="confirmarSenha" name='confirmarSenha' placeholder="Confirmar senha" className="mt-1 block w-full p-2 border border-gray-300 " 

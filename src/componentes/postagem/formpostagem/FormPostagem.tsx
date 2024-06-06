@@ -101,9 +101,8 @@ useEffect(() => {
           }
         }
       } else {
-        try {()=>{
-          
-
+        try {
+          ()=>{
               postagem.date = new Date().getFullYear.toString()
               }
             
